@@ -118,3 +118,56 @@ from
   employee
 where
   hire_date like '1981%';
+-- 10. Query to display Name and Job of all employees who have not assigned a supervisor
+select
+  edname,
+  job_type
+from
+  employee
+where
+  supervisionENO is NULL;
+-- 11. Query to display the Name, Salary and Commission for all the employees who earn commission.
+select
+  edname,
+  salary,
+  commission
+from
+  employee
+where
+  commission is not null;
+-- 12. Sort the data in descending order of Salary and Commission
+select
+  *
+from
+  employee
+order by
+  salary
+  and commission desc;
+-- 13. Query to display Name of all the employees where the third letter of their name is ‘A’.
+select
+  edname
+from
+  employee
+where
+  edname like '__A%';
+-- 14. Query to display Name of all employees either have two ‘R’s or have two ‘A’s in their name and are either in Dept No = 30 or their Manger’s Employee No = 778.
+select
+  edname
+from
+  employee
+where(
+    edname like "%r%r%"
+    or edname like "%a%a%"
+  )
+  and (
+    dno = 30
+    or supervisionENO = 778
+  );
+-- 15. Query to display Name, Salary and Commission for all employees whose Commission amount is greater than their Salary increased by 5%.
+select
+  edname,
+  salary,
+  commission
+from
+  employee
+where(1.05 * salary) < commission;
