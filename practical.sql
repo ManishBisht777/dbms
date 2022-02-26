@@ -1,5 +1,5 @@
 CREATE DATABASE `practicaldb`;
--- CREATE table employee
+-- Create table employee
 CREATE TABLE `employee` (
   `eno` CHAR(3) NOT NULL,
   `edname` VARCHAR(50) NOT NULL,
@@ -12,14 +12,14 @@ CREATE TABLE `employee` (
   PRIMARY KEY (`eno`),
   FOREIGN KEY (`dno`) REFERENCES `department`(`dno`)
 );
--- CREATE table department
+-- Create data into department table
 CREATE TABLE `department` (
   `dno` INT NOT NULL,
   `dname` VARCHAR(50),
   `location` VARCHAR(50) DEFAULT 'New Delhi',
   PRIMARY KEY (`dno`)
 );
--- INSERT into employee
+-- INSERT data into employee table
 INSERT INTO
   employee
 VALUES(
