@@ -171,3 +171,7 @@ select
 from
   employee
 where(1.05 * salary) < commission;
+-- 16. display currdate along with dayname
+select
+  curdate() as currentdate,
+  dayname(curdate()) as currentday;
